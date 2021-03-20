@@ -21,6 +21,7 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
                                 margin: "0 auto",
                                 marginTop: 50,
                                 display: "flex",
+                                flexWrap: "wrap",
                                 justifyContent: "center",
                             }}
                         >
@@ -34,7 +35,7 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
                                 />
                             </Route>
                             <Route exact path="/detail/:postId">
-                                <Detail />
+                                <Detail userObj={userObj} />
                             </Route>
                             <Route exact path="/new">
                                 <Post userObj={userObj} />
