@@ -10,6 +10,7 @@ const Detail = ({ userObj }) => {
     const [title, setTitle] = useState("");
     const [post, setPost] = useState("");
     const [creater, setCreater] = useState("");
+    const [createrName, setCreaterName] = useState("");
     const history = useHistory();
 
     doc.get()
@@ -18,6 +19,7 @@ const Detail = ({ userObj }) => {
                 setPost(doc.data().desc);
                 setTitle(doc.data().title);
                 setCreater(doc.data().creatorId);
+                setCreaterName(doc.data().creatorName);
             } else {
                 alert("삭제되었거나 없는 게시물입니다.");
             }
@@ -25,8 +27,6 @@ const Detail = ({ userObj }) => {
         .catch((error) => {
             console.log(error);
         });
-    console.log(creater);
-    console.log(userObj);
     const onDeleteClick = async () => {
         const ok = window.confirm("정말 삭제하시겠습니까?");
         if (ok) {
@@ -38,7 +38,7 @@ const Detail = ({ userObj }) => {
     return (
         <>
             <span className="post__title">{title}</span>
-            {creater === userObj.uid && (
+            {creater === userObj.uid || userObj.priority ? (
                 <span onClick={onDeleteClick}>
                     <FontAwesomeIcon
                         icon={faTrash}
@@ -46,12 +46,16 @@ const Detail = ({ userObj }) => {
                         className="trashIcon"
                     />
                 </span>
+            ) : (
+                <></>
             )}
             <hr className="post__hr" />
             <div
                 className="post__desc"
                 dangerouslySetInnerHTML={{ __html: post }}
             ></div>
+
+            <div className="post__creator">Written By {createrName}</div>
         </>
     );
 };

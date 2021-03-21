@@ -13,9 +13,9 @@ input {
 }
 
 body {
-    background-color: black;
+    background-color: white;
     font-size: 14px;
-    color: white;
+    color: black;
 }
 
 button {
@@ -33,7 +33,7 @@ form {
 }
 
 .nweet-input::placeholder {
-    color: white;
+    color: black;
     opacity: 0.9;
 }
 
@@ -46,7 +46,8 @@ form {
 }
 
 .formInput {
-    width: 100%;
+    width: 50%;
+    margin: 0 auto;
     padding: 10px 20px;
     border-radius: 20px;
     border: 1px solid black;
@@ -57,24 +58,27 @@ form {
 
 .formBtn {
     cursor: pointer;
-    width: 100%;
+    width: 30%;
+    margin: 0 auto;
     padding: 7px 20px;
+    height: 40px;
     text-align: center;
     color: white;
     border-radius: 20px;
+    font-size: 16px;
     background-color: #04aaff;
-    cursor: pointer;
 }
 
 .cancelBtn {
     cursor: pointer;
     background-color: tomato;
+    padding: 10px 20px;
 }
 
 /* Profile Page */
 
 .profileForm {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.9);
     padding-bottom: 30px;
     width: 100%;
     display: flex;
@@ -82,7 +86,7 @@ form {
 }
 
 .logOut {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 /* Nwitter Factory */
@@ -112,7 +116,7 @@ form {
     width: 100%;
     margin-bottom: 30px;
     padding: 0px 20px;
-    color: white;
+    color: black;
     border: 1px solid #ccc;
     font-weight: 500;
     font-size: 12px;
@@ -124,7 +128,7 @@ form {
     width: 85%;
     margin-top: 20px;
     padding: 0px 20px;
-    color: white;
+    color: black;
     border: 1px solid #04aaff;
     border-radius: 20px;
     font-weight: 500;
@@ -191,17 +195,17 @@ form {
 
 .nweet {
     margin: 0 auto;
-    margin-bottom: 20px;
     background-color: white;
+    border-bottom: 1px solid #dadada;
     width: 70%;
-    /* max-width: 320px; */
-    padding: 5px;
-    padding-left: 15px;
-    border-radius: 5px;
     position: relative;
     display: flex;
     flex-direction: column;
-    color: rgba(0, 0, 0, 0.8);
+    color: black;
+}
+
+.nweet:first-child{
+    border-top: 1px solid #dadada;
 }
 
 .nweet h4 {
@@ -267,7 +271,6 @@ form {
     justify-content: center;
     text-align: center;
     width: 100%;
-    max-width: 320px;
 }
 
 .authBtn {
@@ -286,6 +289,7 @@ form {
 /* AuthForm */
 
 .authInput {
+    margin: 0 auto;
     max-width: 400px;
     width: 100%;
     padding: 10px;
@@ -300,7 +304,7 @@ form {
 .authSubmit {
     text-align: center;
     background: #04aaff;
-    color: white;
+    color: black;
     margin-top: 14px;
     box-sizing: content-box;
     cursor: pointer;
@@ -331,13 +335,14 @@ form {
 
 .post__desc{
     width:100%;
+    min-height: 50vh;
     display: block;
     margin-bottom: 50px;
     text-align: center;
 }
 
 .post__desc img{
-    max-width: 50%;
+    max-width: 100%;
 }
 
 .post__title {
@@ -352,6 +357,11 @@ form {
 .post__hr {
     width: 100%;
     margin-bottom: 80px;
+}
+
+.post__creator {
+    color: rgb(155, 155, 155);
+    margin-bottom: 50px;
 }
 
 .factoryInput__link{
@@ -375,4 +385,16 @@ form {
 
 .trashIcon:hover{
     cursor: pointer;
+}
+
+table {
+    border-collapse: separate;
+    text-indent: initial;
+    border-spacing: 2px;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
 }

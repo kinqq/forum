@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { dbService } from "fbase";
 import Nweet from "components/Nweet";
-import NweetFactory from "components/NweetFactory";
+import { Link } from "react-router-dom";
 
 const Home = ({ userObj }) => {
     const [nweets, setNweets] = useState([]);
@@ -19,19 +19,25 @@ const Home = ({ userObj }) => {
     }, []);
     return (
         <div className="container">
-            <NweetFactory userObj={userObj} />
-            <div style={{ marginTop: 30 }}>
-                {nweets.map((nweet) => (
-                    <Nweet
-                        key={nweet.id}
-                        nweetObj={nweet}
-                        editPriority={
-                            nweet.creatorId === userObj.uid ||
-                            userObj.priority === 1
-                        }
-                    />
-                ))}
+            <div className="center">
+                <Link to="/new" className="factoryInput__link">
+                    글 쓰기
+                </Link>
             </div>
+            <table border="10" bordercolor="red" style={{ marginTop: 30 }}>
+                <tbody>
+                    {nweets.map((nweet) => (
+                        <Nweet
+                            key={nweet.id}
+                            nweetObj={nweet}
+                            editPriority={
+                                nweet.creatorId === userObj.uid ||
+                                userObj.priority === 1
+                            }
+                        />
+                    ))}
+                </tbody>
+            </table>
         </div>
     );
 };

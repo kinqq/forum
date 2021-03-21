@@ -28,53 +28,56 @@ const Nweet = ({ nweetObj, editPriority }) => {
         setNewNweet(value);
     };
     return (
-        <div className="nweet">
-            <Link to={`/detail/${nweetObj.id}`}>
-                <h4>{nweetObj.title}</h4>
-            </Link>
-            {/* {editing ? (
-                <>
-                    <form onSubmit={onSubmit} className="container nweetEdit">
-                        <input
-                            type="text"
-                            placeholder="Edit your nweet"
-                            value={newNweet}
-                            required
-                            autoFocus
-                            onChange={onChange}
-                            className="formInput"
-                        />
-                        <input
-                            type="submit"
-                            value="Update Nweet"
-                            className="formBtn"
-                        />
-                    </form>
-                    <span onClick={toggleEditing} className="formBtn cancelBtn">
-                        Cancel
-                    </span>
-                </>
-            ) : (
-                <>
+        <tr className="nweet">
+            <th>
+                <Link to={`/detail/${nweetObj.id}`}>
                     <h4>{nweetObj.title}</h4>
-                    {<div className="nweet__actions">
-                        {editPriority && (
-                            <>
-                                <span onClick={onDeleteClick}>
-                                    <FontAwesomeIcon icon={faTrash} />
-                                </span>
-                                <span onClick={toggleEditing}>
-                                    <FontAwesomeIcon icon={faPencilAlt} />
-                                </span>
-                                <Link to={`/detail/${nweetObj.id}`}>
-                                    <FontAwesomeIcon icon={faUser} />
-                                </Link>
-                            </>
-                        )}
-                    </div> }
-                </>
-            )} */}
-        </div>
+                </Link>
+            </th>
+
+            {/* {editing ? (
+            <>
+                <form onSubmit={onSubmit} className="container nweetEdit">
+                    <input
+                        type="text"
+                        placeholder="Edit your nweet"
+                        value={newNweet}
+                        required
+                        autoFocus
+                        onChange={onChange}
+                        className="formInput"
+                    />
+                    <input
+                        type="submit"
+                        value="Update Nweet"
+                        className="formBtn"
+                    />
+                </form>
+                <span onClick={toggleEditing} className="formBtn cancelBtn">
+                    Cancel
+                </span>
+            </>
+        ) : (
+            <>
+                <h4>{nweetObj.title}</h4>
+                {<div className="nweet__actions">
+                    {editPriority && (
+                        <>
+                            <span onClick={onDeleteClick}>
+                                <FontAwesomeIcon icon={faTrash} />
+                            </span>
+                            <span onClick={toggleEditing}>
+                                <FontAwesomeIcon icon={faPencilAlt} />
+                            </span>
+                            <Link to={`/detail/${nweetObj.id}`}>
+                                <FontAwesomeIcon icon={faUser} />
+                            </Link>
+                        </>
+                    )}
+                </div> }
+            </>
+        )} */}
+        </tr>
     );
 };
 

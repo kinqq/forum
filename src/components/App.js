@@ -6,10 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 function App() {
     const [init, setInit] = useState(false);
     const [userObj, setUserObj] = useState(null);
-    const adminList = [
-        "iZ8twQlEqYfTII6mCbP2sqNmmRE3",
-        "yRH74zbkCsYlfQjDzreVbHEa1EC2",
-    ];
+    const adminList = ["hRpeUOmi27bBm2MDVbsrd58FTX93"];
 
     useEffect(() => {
         authService.onAuthStateChanged((user) => {
