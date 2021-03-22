@@ -4,7 +4,7 @@ import { authService } from "fbase";
 const AuthForm = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [newAccount, setNewAccount] = useState(true);
+    const [newAccount, setNewAccount] = useState(false);
     let [error, setError] = useState("");
     const onChange = (event) => {
         const {
@@ -25,11 +25,13 @@ const AuthForm = () => {
                     email,
                     password
                 );
+                alert("회원가입 요청을 정상적으로 처리하였습니다.");
             } else {
                 data = await authService.signInWithEmailAndPassword(
                     email,
                     password
                 );
+                alert("로그인 요청을 정상적으로 처리하였습니다.");
             }
             console.log(data);
         } catch (error) {

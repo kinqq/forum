@@ -1,18 +1,44 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+import {
+    faClock,
+    faHouseUser,
+    faUser,
+    faStickyNote,
+} from "@fortawesome/free-solid-svg-icons";
 
-const Navigation = ({ userObj }) => (
-    <nav>
+const Navigation = () => (
+    <nav className="gnb">
         <ul
-            style={{ display: "flex", justifyContent: "center", marginTop: 50 }}
+            style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: 40,
+            }}
         >
             <li>
                 <Link to="/" style={{ marginRight: 10 }}>
                     <FontAwesomeIcon
-                        icon={faTwitter}
+                        icon={faHouseUser}
+                        color={"#04AAFF"}
+                        size="2x"
+                    />
+                </Link>
+            </li>
+            <li>
+                <Link
+                    to="/"
+                    style={{
+                        marginRight: 10,
+                        marginLeft: 10,
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                    }}
+                >
+                    <FontAwesomeIcon
+                        icon={faStickyNote}
                         color={"#04AAFF"}
                         size="2x"
                     />
@@ -22,11 +48,11 @@ const Navigation = ({ userObj }) => (
                 <Link
                     to="/profile"
                     style={{
+                        marginRight: 10,
                         marginLeft: 10,
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
-                        fontSize: 12,
                     }}
                 >
                     <FontAwesomeIcon
@@ -34,11 +60,23 @@ const Navigation = ({ userObj }) => (
                         color={"#04AAFF"}
                         size="2x"
                     />
-                    <span style={{ marginTop: 10 }}>
-                        {userObj.displayName
-                            ? `${userObj.displayName}의 Profile`
-                            : "Profile"}
-                    </span>
+                </Link>
+            </li>
+            <li>
+                <Link
+                    to="/time"
+                    style={{
+                        marginLeft: 10,
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                    }}
+                >
+                    <FontAwesomeIcon
+                        icon={faClock}
+                        color={"#04AAFF"}
+                        size="2x"
+                    />
                 </Link>
             </li>
         </ul>

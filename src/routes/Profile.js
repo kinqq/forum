@@ -7,6 +7,7 @@ export default ({ refreshUser, userObj }) => {
     const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
     const onLogOutClick = () => {
         authService.signOut();
+        alert("로그아웃 요청을 정상적으로 처리하였습니다.");
         history.push("/");
     };
     const onChange = (event) => {
@@ -22,6 +23,7 @@ export default ({ refreshUser, userObj }) => {
                 displayName: newDisplayName,
             });
             refreshUser();
+            alert(`이름이 ${newDisplayName}(으)로 변경되었습니다.`);
         }
     };
     return (

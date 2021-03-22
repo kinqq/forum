@@ -6,11 +6,12 @@ import Profile from "routes/Profile";
 import Navigation from "components/Navigation";
 import Detail from "routes/Detail";
 import Post from "./Post";
+// import Time from "./Time";
 
 const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
     return (
         <Router>
-            {isLoggedIn && <Navigation userObj={userObj} />}
+            {isLoggedIn && <Navigation />}
             <Switch>
                 <>
                     {isLoggedIn ? (
@@ -40,6 +41,9 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
                             <Route exact path="/new">
                                 <Post userObj={userObj} />
                             </Route>
+                            {/* <Route exact path="/time">
+                                <Time />
+                            </Route> */}
                         </div>
                     ) : (
                         <>

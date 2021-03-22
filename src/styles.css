@@ -297,14 +297,14 @@ form {
     background-color: rgba(255, 255, 255, 1);
     margin-bottom: 10px;
     font-size: 16px;
-    color: black;
+    color: white;
     box-sizing: content-box;
 }
 
 .authSubmit {
     text-align: center;
     background: #04aaff;
-    color: black;
+    color: white;
     margin-top: 14px;
     box-sizing: content-box;
     cursor: pointer;
@@ -397,4 +397,12 @@ tr {
     display: table-row;
     vertical-align: inherit;
     border-color: inherit;
+}
+
+.gnb{
+    height: 70px;
+    display:flex;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: hidden;
 }

@@ -11,6 +11,7 @@ const Detail = ({ userObj }) => {
     const [post, setPost] = useState("");
     const [creater, setCreater] = useState("");
     const [createrName, setCreaterName] = useState("");
+    const [createTime, setCreateTime] = useState("");
     const history = useHistory();
 
     doc.get()
@@ -20,6 +21,7 @@ const Detail = ({ userObj }) => {
                 setTitle(doc.data().title);
                 setCreater(doc.data().creatorId);
                 setCreaterName(doc.data().creatorName);
+                setCreateTime(doc.data().createdAt);
             } else {
                 alert("삭제되었거나 없는 게시물입니다.");
             }
@@ -55,7 +57,9 @@ const Detail = ({ userObj }) => {
                 dangerouslySetInnerHTML={{ __html: post }}
             ></div>
 
-            <div className="post__creator">Written By {createrName}</div>
+            <div className="post__creator">
+                Written By {createrName} at {createTime}
+            </div>
         </>
     );
 };
