@@ -49,6 +49,13 @@ export default ({ refreshUser, userObj }) => {
             <span className="formBtn cancelBtn logOut" onClick={onLogOutClick}>
                 로그아웃
             </span>
+            <div className="center" style={{ marginTop: 50 }}>
+                {userObj.priority ? (
+                    <div className="post__creator">You are an admin.</div>
+                ) : (
+                    <></>
+                )}
+            </div>
         </div>
     );
 };

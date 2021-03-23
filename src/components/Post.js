@@ -8,10 +8,12 @@ import { useHistory } from "react-router";
 const Post = ({ userObj }) => {
     const [title, setTitle] = useState("");
     const [desc, setDesc] = useState("");
+    const [category, setCategory] = useState("수행평가 게시판");
     const history = useHistory();
     let en = -1;
     let result = "";
     const onSubmit = async (event) => {
+        console.log(category);
         result = desc;
         document.getElementsByClassName("factoryInput__arrow")[0].value =
             "게시중...";
@@ -47,9 +49,11 @@ const Post = ({ userObj }) => {
             return;
         }
         const day = new Date().toLocaleString();
+        console.log(category);
         const nweetObj = {
             title: title,
             desc: result,
+            category: category,
             createdAt: day,
             creatorId: userObj.uid,
             creatorName: userObj.displayName,
@@ -65,10 +69,22 @@ const Post = ({ userObj }) => {
         } = e;
         setTitle(value);
     };
+
+    const onCategoryChange = (e) => {
+        const {
+            target: { value },
+        } = e;
+        setCategory(value);
+    };
     return (
         <form onSubmit={onSubmit} className="factoryForm">
             <div>
-                <TitleFactory title={title} onChange={onTitleChange} />
+                <TitleFactory
+                    title={title}
+                    onChange={onTitleChange}
+                    category={category}
+                    onCategoryChange={onCategoryChange}
+                />
                 <PostFactory value={desc} onChange={setDesc} />
                 <div className="center">
                     <input

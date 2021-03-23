@@ -1,12 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faClock,
-    faHouseUser,
-    faUser,
-    faStickyNote,
-} from "@fortawesome/free-solid-svg-icons";
 
 const Navigation = () => (
     <nav className="gnb">
@@ -14,21 +7,24 @@ const Navigation = () => (
             style={{
                 display: "flex",
                 justifyContent: "center",
-                marginTop: 40,
+                backgroundColor: "#04AAFF",
+                width: "100%",
+                padding: 18,
             }}
         >
             <li>
-                <Link to="/" style={{ marginRight: 10 }}>
-                    <FontAwesomeIcon
-                        icon={faHouseUser}
-                        color={"#04AAFF"}
-                        size="2x"
-                    />
+                <Link
+                    className="navLink"
+                    to="/test"
+                    style={{ marginRight: 10 }}
+                >
+                    수행평가 게시판
                 </Link>
             </li>
             <li>
                 <Link
-                    to="/"
+                    className="navLink"
+                    to="/schedule"
                     style={{
                         marginRight: 10,
                         marginLeft: 10,
@@ -37,15 +33,27 @@ const Navigation = () => (
                         alignItems: "center",
                     }}
                 >
-                    <FontAwesomeIcon
-                        icon={faStickyNote}
-                        color={"#04AAFF"}
-                        size="2x"
-                    />
+                    학사일정 게시판
                 </Link>
             </li>
             <li>
                 <Link
+                    className="navLink"
+                    to="/free"
+                    style={{
+                        marginRight: 10,
+                        marginLeft: 10,
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                    }}
+                >
+                    자유 게시판
+                </Link>
+            </li>
+            <li>
+                <Link
+                    className="navLink"
                     to="/profile"
                     style={{
                         marginRight: 10,
@@ -55,15 +63,12 @@ const Navigation = () => (
                         alignItems: "center",
                     }}
                 >
-                    <FontAwesomeIcon
-                        icon={faUser}
-                        color={"#04AAFF"}
-                        size="2x"
-                    />
+                    프로필
                 </Link>
             </li>
-            <li>
+            {/* <li>
                 <Link
+                    className="navLink"
                     to="/time"
                     style={{
                         marginLeft: 10,
@@ -72,13 +77,9 @@ const Navigation = () => (
                         alignItems: "center",
                     }}
                 >
-                    <FontAwesomeIcon
-                        icon={faClock}
-                        color={"#04AAFF"}
-                        size="2x"
-                    />
+                    시간표
                 </Link>
-            </li>
+            </li> */}
         </ul>
     </nav>
 );

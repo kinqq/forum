@@ -6,7 +6,7 @@ import Profile from "routes/Profile";
 import Navigation from "components/Navigation";
 import Detail from "routes/Detail";
 import Post from "./Post";
-// import Time from "./Time";
+import Time from "./Time";
 
 const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
     return (
@@ -27,7 +27,28 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
                             }}
                         >
                             <Route exact path="/">
-                                <Home userObj={userObj} />
+                                <Home
+                                    userObj={userObj}
+                                    category="수행평가 게시판"
+                                />
+                            </Route>
+                            <Route exact path="/test">
+                                <Home
+                                    userObj={userObj}
+                                    category="수행평가 게시판"
+                                />
+                            </Route>
+                            <Route exact path="/schedule">
+                                <Home
+                                    userObj={userObj}
+                                    category="학사일정 게시판"
+                                />
+                            </Route>
+                            <Route exact path="/free">
+                                <Home
+                                    userObj={userObj}
+                                    category="자유 게시판"
+                                />
                             </Route>
                             <Route exact path="/profile">
                                 <Profile
@@ -41,9 +62,9 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
                             <Route exact path="/new">
                                 <Post userObj={userObj} />
                             </Route>
-                            {/* <Route exact path="/time">
+                            <Route exact path="/time">
                                 <Time />
-                            </Route> */}
+                            </Route>
                         </div>
                     ) : (
                         <>

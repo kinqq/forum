@@ -6,16 +6,15 @@ import { BrowserRouter } from "react-router-dom";
 function App() {
     const [init, setInit] = useState(false);
     const [userObj, setUserObj] = useState(null);
-    const adminList = ["hRpeUOmi27bBm2MDVbsrd58FTX93"];
 
     useEffect(() => {
+        const adminList = ["hRpeUOmi27bBm2MDVbsrd58FTX93"];
         authService.onAuthStateChanged((user) => {
             if (user) {
                 const priority = adminList.includes(user.uid) ? 1 : 0;
                 // 1 = admin, 0 = not admin
                 setUserObj({
                     displayName: user.displayName,
-
                     uid: user.uid,
                     priority: priority,
                     updateProfile: (args) => user.updateProfile(args),
@@ -25,9 +24,9 @@ function App() {
             }
             setInit(true);
         });
-        // eslint-disable-next-line
     }, []);
     const refreshUser = () => {
+        const adminList = ["hRpeUOmi27bBm2MDVbsrd58FTX93"];
         const user = authService.currentUser;
         const priority = adminList.includes(user.uid) ? 1 : 0;
         // 1 = admin, 0 = not admin

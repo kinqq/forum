@@ -10,5 +10,6 @@ export default () => {
     const result = timetable.getTimetable();
     console.log("get timetable finish");
     console.log(result);
+
     return <div>TimeTable</div>;
 };
