@@ -408,6 +408,8 @@ tr {
 .navLink {
     color: white;
     font-size: 20px;
+    margin-right: 10;
+    margin-left: 10;
 }
 
 li {

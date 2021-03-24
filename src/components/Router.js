@@ -1,12 +1,13 @@
 import React from "react";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Auth from "routes/Auth";
-import Home from "routes/Home";
+import Forum from "routes/Forum";
 import Profile from "routes/Profile";
 import Navigation from "components/Navigation";
 import Detail from "routes/Detail";
 import Post from "./Post";
 import Time from "./Time";
+import Home from "./Home";
 
 const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
     return (
@@ -27,25 +28,22 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
                             }}
                         >
                             <Route exact path="/">
-                                <Home
-                                    userObj={userObj}
-                                    category="수행평가 게시판"
-                                />
+                                <Home />
                             </Route>
                             <Route exact path="/test">
-                                <Home
+                                <Forum
                                     userObj={userObj}
                                     category="수행평가 게시판"
                                 />
                             </Route>
                             <Route exact path="/schedule">
-                                <Home
+                                <Forum
                                     userObj={userObj}
                                     category="학사일정 게시판"
                                 />
                             </Route>
                             <Route exact path="/free">
-                                <Home
+                                <Forum
                                     userObj={userObj}
                                     category="자유 게시판"
                                 />

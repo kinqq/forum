@@ -8,13 +8,27 @@ import { useHistory } from "react-router";
 const Post = ({ userObj }) => {
     const [title, setTitle] = useState("");
     const [desc, setDesc] = useState("");
-    const [category, setCategory] = useState("수행평가 게시판");
+    const [category, setCategory] = useState("게시판을 선택해주세요.");
     const history = useHistory();
     let en = -1;
     let result = "";
     const onSubmit = async (event) => {
         console.log(category);
         result = desc;
+        if (title === "") {
+            alert("제목을 입력하세요.");
+            document.getElementsByClassName("factoryInput__title")[0].focus();
+            return;
+        } else if (category === "게시판을 선택해주세요.") {
+            alert("카테고리를 선택하세요.");
+            document.getElementsByClassName("titleFactory__select")[0].focus();
+            return;
+        } else if (desc === "") {
+            alert("본문을 입력하세요.");
+            document.getElementsByClassName("ql-editor")[0].focus();
+            return;
+        }
+
         document.getElementsByClassName("factoryInput__arrow")[0].value =
             "게시중...";
         while (1) {
@@ -39,15 +53,7 @@ const Post = ({ userObj }) => {
             console.log(result);
         }
         event.preventDefault();
-        if (title === "") {
-            alert("제목을 입력하세요.");
-            document.getElementsByClassName("factoryInput__title")[0].focus();
-            return;
-        } else if (desc === "") {
-            alert("본문을 입력하세요.");
-            document.getElementsByClassName("ql-editor")[0].focus();
-            return;
-        }
+
         const day = new Date().toLocaleString();
         console.log(category);
         const nweetObj = {

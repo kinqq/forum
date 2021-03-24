@@ -13,56 +13,27 @@ const Navigation = () => (
             }}
         >
             <li>
-                <Link
-                    className="navLink"
-                    to="/test"
-                    style={{ marginRight: 10 }}
-                >
+                <Link className="navLink" to="/">
+                    홈
+                </Link>
+            </li>
+            <li>
+                <Link className="navLink" to="/test">
                     수행평가 게시판
                 </Link>
             </li>
             <li>
-                <Link
-                    className="navLink"
-                    to="/schedule"
-                    style={{
-                        marginRight: 10,
-                        marginLeft: 10,
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                    }}
-                >
+                <Link className="navLink" to="/schedule">
                     학사일정 게시판
                 </Link>
             </li>
             <li>
-                <Link
-                    className="navLink"
-                    to="/free"
-                    style={{
-                        marginRight: 10,
-                        marginLeft: 10,
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                    }}
-                >
+                <Link className="navLink" to="/free">
                     자유 게시판
                 </Link>
             </li>
             <li>
-                <Link
-                    className="navLink"
-                    to="/profile"
-                    style={{
-                        marginRight: 10,
-                        marginLeft: 10,
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                    }}
-                >
+                <Link className="navLink" to="/profile">
                     프로필
                 </Link>
             </li>

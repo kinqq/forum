@@ -3,7 +3,7 @@ import { dbService } from "fbase";
 import Nweet from "components/Nweet";
 import { Link } from "react-router-dom";
 
-const Home = ({ userObj, category }) => {
+const Forum = ({ userObj, category }) => {
     const [nweets, setNweets] = useState([]);
     console.log(category);
     useEffect(() => {
@@ -46,4 +46,4 @@ const Home = ({ userObj, category }) => {
         </div>
     );
 };
-export default Home;
+export default Forum;

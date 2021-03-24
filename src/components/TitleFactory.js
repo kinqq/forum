@@ -12,7 +12,14 @@ const TitleFactory = ({ title, onChange, category, onCategoryChange }) => {
                 maxLength={120}
             />
             <form>
-                <select value={category} onChange={onCategoryChange}>
+                <select
+                    className="titleFactory__select"
+                    value={category}
+                    onChange={onCategoryChange}
+                >
+                    <option disabled hidden>
+                        게시판을 선택해주세요.
+                    </option>
                     <option>수행평가 게시판</option>
                     <option>학사일정 게시판</option>
                     <option>자유 게시판</option>
