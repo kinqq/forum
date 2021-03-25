@@ -14,6 +14,11 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
         <Router>
             {isLoggedIn && <Navigation />}
             <Switch>
+                <Route exact path="/">
+                    <Home />
+                </Route>
+            </Switch>
+            <Switch>
                 <>
                     {isLoggedIn ? (
                         <div
@@ -27,9 +32,6 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
                                 justifyContent: "center",
                             }}
                         >
-                            <Route exact path="/">
-                                <Home />
-                            </Route>
                             <Route exact path="/test">
                                 <Forum
                                     userObj={userObj}

@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter, faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { authService, firebaseInstance } from "fbase";
 import AuthForm from "components/AuthForm";
 
@@ -27,7 +27,7 @@ const Auth = () => {
                     name="google"
                     className="authBtn"
                 >
-                    <FontAwesomeIcon icon={faGoogle} size="2x" />
+                    Google로 로그인하기
                 </button>
             </div>
         </div>

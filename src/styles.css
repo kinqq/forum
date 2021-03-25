@@ -2,6 +2,10 @@
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
 * { font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; }
 
+html, body, #root{
+    height: 100%;
+}
+
 input {
     all: unset;
     appearance: none;
@@ -31,6 +35,8 @@ a {
 form {
     width: 100%;
 }
+
+
 
 .nweet-input::placeholder {
     color: black;
@@ -279,9 +285,9 @@ form {
     border: none;
     padding: 10px 0px;
     margin: 3%;
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
-    width: 70px;
+    /* width: 135px; */
     background: white;
     cursor: pointer;
 }
@@ -294,10 +300,10 @@ form {
     width: 100%;
     padding: 10px;
     border-radius: 30px;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: #00aaff1f;
     margin-bottom: 10px;
     font-size: 16px;
-    color: white;
+    color: rgb(0, 0, 0);
     box-sizing: content-box;
 }
 
