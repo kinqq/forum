@@ -4,6 +4,7 @@ import { authService } from "fbase";
 const AuthForm = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [repassword, setRepassword] = useState("");
     const [newAccount, setNewAccount] = useState(false);
     let [error, setError] = useState("");
     const onChange = (event) => {
@@ -14,6 +15,8 @@ const AuthForm = () => {
             setEmail(value);
         } else if (name === "password") {
             setPassword(value);
+        } else if (name === "repassword") {
+            setRepassword(value);
         }
     };
     const onSubmit = async (event) => {
@@ -21,6 +24,10 @@ const AuthForm = () => {
         try {
             let data;
             if (newAccount) {
+                if (password !== repassword) {
+                    alert("비밀번호와 재입력한 비밀번호가 다릅니다.");
+                    return;
+                }
                 data = await authService.createUserWithEmailAndPassword(
                     email,
                     password
@@ -45,7 +52,7 @@ const AuthForm = () => {
                 <input
                     name="email"
                     type="email"
-                    placeholder="Email"
+                    placeholder="이메일"
                     required
                     value={email}
                     onChange={onChange}
@@ -54,12 +61,23 @@ const AuthForm = () => {
                 <input
                     name="password"
                     type="password"
-                    placeholder="Password"
+                    placeholder="비밀번호"
                     required
                     value={password}
                     className="authInput"
                     onChange={onChange}
                 />
+                {newAccount && (
+                    <input
+                        name="repassword"
+                        type="password"
+                        placeholder="비밀번호 재입력"
+                        required
+                        value={repassword}
+                        className="authInput"
+                        onChange={onChange}
+                    />
+                )}
 
                 <input
                     type="submit"
