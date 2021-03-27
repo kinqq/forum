@@ -3,15 +3,7 @@ import { Link } from "react-router-dom";
 
 const Navigation = () => (
     <nav className="gnb">
-        <ul
-            style={{
-                display: "flex",
-                justifyContent: "center",
-                backgroundColor: "#04AAFF",
-                width: "100%",
-                padding: 18,
-            }}
-        >
+        <ul>
             <li>
                 <Link className="navLink" to="/">
                     홈
@@ -19,38 +11,24 @@ const Navigation = () => (
             </li>
             <li>
                 <Link className="navLink" to="/test">
-                    수행평가 게시판
+                    <span>수행평가 게시판</span>
                 </Link>
             </li>
             <li>
                 <Link className="navLink" to="/schedule">
-                    학사일정 게시판
+                    <span>학사일정 게시판</span>
                 </Link>
             </li>
             <li>
                 <Link className="navLink" to="/free">
-                    자유 게시판
+                    <span>자유 게시판</span>
                 </Link>
             </li>
             <li>
                 <Link className="navLink" to="/profile">
-                    프로필
+                    <span>프로필</span>
                 </Link>
             </li>
-            {/* <li>
-                <Link
-                    className="navLink"
-                    to="/time"
-                    style={{
-                        marginLeft: 10,
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                    }}
-                >
-                    시간표
-                </Link>
-            </li> */}
         </ul>
     </nav>
 );

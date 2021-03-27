@@ -3,6 +3,7 @@ import { dbService } from "fbase";
 import { useHistory, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import Disqus from "disqus-react";
 
 const Detail = ({ userObj }) => {
     const { postId } = useParams();
@@ -13,7 +14,6 @@ const Detail = ({ userObj }) => {
     const [createrName, setCreaterName] = useState("");
     const [createTime, setCreateTime] = useState("");
     const history = useHistory();
-
     doc.get()
         .then((doc) => {
             if (doc.exists) {
@@ -60,6 +60,8 @@ const Detail = ({ userObj }) => {
             <div className="post__creator">
                 Written By {createrName} at {createTime}
             </div>
+
+            <div id="disqus_thread"></div>
         </>
     );
 };
