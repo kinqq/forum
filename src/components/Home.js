@@ -18,8 +18,8 @@ const Home = () => {
                 </h2>
             </section>
 
-            <Link to="/test">
-                <span className="home__link">수행평가 게시판</span>
+            <Link to="/new">
+                <span className="home__link">글쓰기</span>
             </Link>
         </div>
     );

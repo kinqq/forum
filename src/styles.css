@@ -404,7 +404,7 @@ font-size: 20px;
 .authInput {
     margin: 0 auto;
     max-width: 400px;
-    width: 100%;
+    width: 80%;
     padding: 10px;
     border-radius: 30px;
     background-color: #00aaff1f;
@@ -440,18 +440,29 @@ font-size: 20px;
     text-decoration: underline;
 }
 
+.authTitle{
+    margin-bottom: 50px;
+    font-size: 38px;
+    font-weight: 600;
+}
+
 .center{
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
+.post{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .post__desc{
-    width:100%;
     min-height: 50vh;
-    display: block;
-    margin-bottom: 50px;
-    text-align: center;
+    display:flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .post__desc img{
@@ -460,7 +471,7 @@ font-size: 20px;
 
 .post__title {
     width: 80%;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 500;
     margin-bottom: 20px;
     display: inline-block;
@@ -474,7 +485,7 @@ font-size: 20px;
 
 .post__creator {
     color: rgb(155, 155, 155);
-    margin-bottom: 50px;
+    margin: 100px auto;
 }
 
 .factoryInput__link{
@@ -492,8 +503,8 @@ font-size: 20px;
 
 .trashIcon {
     position: absolute;
-    margin-left: 40px;
-    margin-top: 10px;
+    margin-left: 15%;
+    margin-top: 7px;
 }
 
 .trashIcon:hover{
@@ -536,4 +547,3 @@ tr {
     font-size: 1.3em;
     word-break: keep-all;
 }
-

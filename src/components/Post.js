@@ -90,6 +90,7 @@ const Post = ({ userObj }) => {
                     onChange={onTitleChange}
                     category={category}
                     onCategoryChange={onCategoryChange}
+                    className="titlefactory"
                 />
                 <PostFactory value={desc} onChange={setDesc} />
                 <div className="center">

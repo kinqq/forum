@@ -1,6 +1,4 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { authService, firebaseInstance } from "fbase";
 import AuthForm from "components/AuthForm";
 
@@ -11,16 +9,10 @@ const Auth = () => {
     };
     return (
         <div className="authContainer">
-            <FontAwesomeIcon
-                icon={faTwitter}
-                color={"#04AAFF"}
-                size="5x"
-                style={{ marginBottom: 30 }}
-            />
+            <div className="authTitle">2-10 포럼</div>
             <div className="authBtns">
                 <AuthForm />
             </div>
-
             <div className="authBtns">
                 <button
                     onClick={onSocialClick}

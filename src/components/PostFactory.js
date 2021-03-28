@@ -39,7 +39,7 @@ const formats = [
 
 const PostFactory = ({ value, onChange }) => {
     return (
-        <div style={{ height: "650px" }}>
+        <div className="postfactory" style={{ height: "650px" }}>
             <ReactQuill
                 style={{ height: "600px" }}
                 theme="snow"

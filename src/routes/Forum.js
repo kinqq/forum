@@ -3,42 +3,34 @@ import { dbService } from "fbase";
 import Nweet from "components/Nweet";
 import { Link } from "react-router-dom";
 
-const Forum = ({ userObj, category }) => {
+const Forum = ({ category }) => {
     const [nweets, setNweets] = useState([]);
-    console.log(category);
+
     useEffect(() => {
         dbService
             .collection("nweets")
-            .orderBy("createdAt", "desc")
-            .onSnapshot((snapshot) => {
-                const nweetArray = snapshot.docs.map((doc) => ({
-                    id: doc.id,
-                    ...doc.data(),
-                }));
+            .where("category", "==", category)
+            .get()
+            .then((querySnapshot) => {
+                const nweetArray = [];
+                querySnapshot.forEach((doc) => {
+                    nweetArray.push({ id: doc.id, ...doc.data() });
+                });
                 setNweets(nweetArray);
             });
     }, []);
     return (
         <div className="container">
             <div className="center">
-                <Link to="/new" className="factoryInput__link">
+                <Link to={"/new/" + category} className="factoryInput__link">
                     글 쓰기
                 </Link>
             </div>
             <table border="10" bordercolor="red" style={{ marginTop: 30 }}>
                 <tbody>
-                    {nweets.map((nweet) => {
+                    {nweets.map((nweet, n) => {
                         return (
-                            nweet.category === category && (
-                                <Nweet
-                                    key={nweet.id}
-                                    nweetObj={nweet}
-                                    editPriority={
-                                        nweet.creatorId === userObj.uid ||
-                                        userObj.priority === 1
-                                    }
-                                />
-                            )
+                            <Nweet key={nweet.id} nweetObj={nweet} num={n} />
                         );
                     })}
                 </tbody>

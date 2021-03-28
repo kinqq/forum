@@ -3,7 +3,7 @@ import { dbService } from "fbase";
 import { useHistory, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import Disqus from "disqus-react";
+import "react-quill/dist/quill.snow.css";
 
 const Detail = ({ userObj }) => {
     const { postId } = useParams();
@@ -39,29 +39,32 @@ const Detail = ({ userObj }) => {
 
     return (
         <>
-            <span className="post__title">{title}</span>
-            {creater === userObj.uid || userObj.priority ? (
-                <span onClick={onDeleteClick}>
-                    <FontAwesomeIcon
-                        icon={faTrash}
-                        size="lg"
-                        className="trashIcon"
-                    />
-                </span>
-            ) : (
-                <></>
-            )}
+            <span className="post__title">
+                {title}
+                {creater === userObj.uid || userObj.priority ? (
+                    <span onClick={onDeleteClick}>
+                        <FontAwesomeIcon
+                            icon={faTrash}
+                            size="xs"
+                            className="trashIcon"
+                        />
+                    </span>
+                ) : (
+                    <></>
+                )}
+            </span>
+
             <hr className="post__hr" />
-            <div
-                className="post__desc"
-                dangerouslySetInnerHTML={{ __html: post }}
-            ></div>
+            <div className="post__desc">
+                <div
+                    className="ql-editor"
+                    dangerouslySetInnerHTML={{ __html: post }}
+                ></div>
 
-            <div className="post__creator">
-                Written By {createrName} at {createTime}
+                <div className="post__creator">
+                    Written By {createrName} at {createTime}
+                </div>
             </div>
-
-            <div id="disqus_thread"></div>
         </>
     );
 };

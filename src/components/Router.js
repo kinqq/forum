@@ -60,6 +60,9 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
                             <Route exact path="/new">
                                 <Post userObj={userObj} />
                             </Route>
+                            <Route exact path="/new/:category">
+                                <Post userObj={userObj} />
+                            </Route>
                             <Route exact path="/time">
                                 <Time />
                             </Route>
