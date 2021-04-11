@@ -18,7 +18,7 @@ const Forum = ({ category }) => {
                 });
                 setNweets(nweetArray);
             });
-    }, []);
+    }, [category]);
     return (
         <div className="container">
             <div className="center">

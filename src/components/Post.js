@@ -9,11 +9,19 @@ const Post = ({ userObj }) => {
     const [title, setTitle] = useState("");
     const [desc, setDesc] = useState("");
     const [category, setCategory] = useState("게시판을 선택해주세요.");
+    const [name, setName] = useState("");
     const history = useHistory();
     let en = -1;
     let result = "";
+
+    dbService
+        .collection("userInfo")
+        .doc(userObj.uid)
+        .get()
+        .then((doc) => {
+            setName(doc.data().displayName);
+        });
     const onSubmit = async (event) => {
-        console.log(category);
         result = desc;
         if (title === "") {
             alert("제목을 입력하세요.");
@@ -55,14 +63,14 @@ const Post = ({ userObj }) => {
         event.preventDefault();
 
         const day = new Date().toLocaleString();
-        console.log(category);
+        console.log(name);
         const nweetObj = {
             title: title,
             desc: result,
             category: category,
             createdAt: day,
             creatorId: userObj.uid,
-            creatorName: userObj.displayName,
+            creatorName: name,
         };
         await dbService.collection("nweets").add(nweetObj);
         setTitle("");

@@ -58,7 +58,10 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
                                 <Detail userObj={userObj} />
                             </Route>
                             <Route exact path="/new">
-                                <Post userObj={userObj} />
+                                <Post
+                                    userObj={userObj}
+                                    refreshUser={refreshUser}
+                                />
                             </Route>
                             <Route exact path="/new/:category">
                                 <Post userObj={userObj} />
@@ -70,7 +73,10 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
                     ) : (
                         <>
                             <Route exact path="/">
-                                <Auth />
+                                <Auth
+                                    userObj={userObj}
+                                    refreshUser={refreshUser}
+                                />
                             </Route>
                         </>
                     )}

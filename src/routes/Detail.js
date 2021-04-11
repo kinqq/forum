@@ -4,31 +4,37 @@ import { useHistory, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import "react-quill/dist/quill.snow.css";
+import { useEffect } from "react";
 
 const Detail = ({ userObj }) => {
     const { postId } = useParams();
-    const doc = dbService.collection("nweets").doc(postId);
+
     const [title, setTitle] = useState("");
     const [post, setPost] = useState("");
     const [creater, setCreater] = useState("");
     const [createrName, setCreaterName] = useState("");
     const [createTime, setCreateTime] = useState("");
     const history = useHistory();
-    doc.get()
-        .then((doc) => {
-            if (doc.exists) {
-                setPost(doc.data().desc);
-                setTitle(doc.data().title);
-                setCreater(doc.data().creatorId);
-                setCreaterName(doc.data().creatorName);
-                setCreateTime(doc.data().createdAt);
-            } else {
-                alert("삭제되었거나 없는 게시물입니다.");
-            }
-        })
-        .catch((error) => {
-            console.log(error);
-        });
+    useEffect(() => {
+        dbService
+            .collection("nweets")
+            .doc(postId)
+            .get()
+            .then((doc) => {
+                if (doc.exists) {
+                    setCreater(doc.data().creatorId);
+                    setCreaterName(doc.data().creatorName);
+                    setPost(doc.data().desc);
+                    setTitle(doc.data().title);
+                    setCreateTime(doc.data().createdAt);
+                } else {
+                    alert("삭제되었거나 없는 게시물입니다.");
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    });
     const onDeleteClick = async () => {
         const ok = window.confirm("정말 삭제하시겠습니까?");
         if (ok) {
@@ -61,9 +67,8 @@ const Detail = ({ userObj }) => {
                     dangerouslySetInnerHTML={{ __html: post }}
                 ></div>
 
-                <div className="post__creator">
-                    Written By {createrName} at {createTime}
-                </div>
+                <div className="post__creator">{createrName}</div>
+                <div className="post__creator">{createTime}</div>
             </div>
         </>
     );

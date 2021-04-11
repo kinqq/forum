@@ -8,7 +8,7 @@ function App() {
     const [userObj, setUserObj] = useState(null);
 
     useEffect(() => {
-        const adminList = ["hRpeUOmi27bBm2MDVbsrd58FTX93"];
+        const adminList = ["PsQYcEBxxndaVMidQFdCSIeiUzp2"];
         authService.onAuthStateChanged((user) => {
             if (user) {
                 const priority = adminList.includes(user.uid) ? 1 : 0;
