@@ -555,3 +555,9 @@ tr {
     font-size: 1.3em;
     word-break: keep-all;
 }
+
+.profile__nameHello {
+    color:black;
+    font-size: 1.8em;
+    margin: 30px auto 50px auto;
+}

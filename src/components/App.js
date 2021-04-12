@@ -8,7 +8,7 @@ function App() {
     const [userObj, setUserObj] = useState(null);
 
     useEffect(() => {
-        const adminList = ["PsQYcEBxxndaVMidQFdCSIeiUzp2"];
+        const adminList = ["GIlYEEsfxsOOxPZQdcz7EfLrBdg1"];
         authService.onAuthStateChanged((user) => {
             if (user) {
                 const priority = adminList.includes(user.uid) ? 1 : 0;
@@ -26,7 +26,7 @@ function App() {
         });
     }, []);
     const refreshUser = () => {
-        const adminList = ["hRpeUOmi27bBm2MDVbsrd58FTX93"];
+        const adminList = ["GIlYEEsfxsOOxPZQdcz7EfLrBdg1"];
         const user = authService.currentUser;
         const priority = adminList.includes(user.uid) ? 1 : 0;
         // 1 = admin, 0 = not admin
