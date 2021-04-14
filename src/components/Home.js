@@ -17,7 +17,6 @@ const Home = () => {
                     <span>사이트입니다.</span>
                 </h2>
             </section>
-
             <Link to="/new">
                 <span className="home__link">글쓰기</span>
             </Link>

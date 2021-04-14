@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { authService, dbService } from "fbase";
 import { useHistory } from "react-router-dom";
+import Timetable from "components/Timetable";
 
 export default ({ userObj }) => {
     const history = useHistory();
@@ -23,6 +24,7 @@ export default ({ userObj }) => {
             <span className="profile__nameHello">
                 {displayName}님 안녕하세요.
             </span>
+            <Timetable />
             <span className="formBtn cancelBtn logOut" onClick={onLogOutClick}>
                 로그아웃
             </span>
