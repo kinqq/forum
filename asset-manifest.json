@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/forum/static/css/main.65c7c645.chunk.css",
-    "main.js": "/forum/static/js/main.0d0d133e.chunk.js",
-    "main.js.map": "/forum/static/js/main.0d0d133e.chunk.js.map",
+    "main.js": "/forum/static/js/main.3939fa8a.chunk.js",
+    "main.js.map": "/forum/static/js/main.3939fa8a.chunk.js.map",
     "runtime-main.js": "/forum/static/js/runtime-main.57d3de57.js",
     "runtime-main.js.map": "/forum/static/js/runtime-main.57d3de57.js.map",
     "static/css/2.ad76a385.chunk.css": "/forum/static/css/2.ad76a385.chunk.css",
-    "static/js/2.c7237990.chunk.js": "/forum/static/js/2.c7237990.chunk.js",
-    "static/js/2.c7237990.chunk.js.map": "/forum/static/js/2.c7237990.chunk.js.map",
+    "static/js/2.ac57aafa.chunk.js": "/forum/static/js/2.ac57aafa.chunk.js",
+    "static/js/2.ac57aafa.chunk.js.map": "/forum/static/js/2.ac57aafa.chunk.js.map",
     "index.html": "/forum/index.html",
-    "precache-manifest.50d333f924f1e6e2632d50068a408f4c.js": "/forum/precache-manifest.50d333f924f1e6e2632d50068a408f4c.js",
+    "precache-manifest.625c3b06de6bd560eaeb79c0e1ccc575.js": "/forum/precache-manifest.625c3b06de6bd560eaeb79c0e1ccc575.js",
     "service-worker.js": "/forum/service-worker.js",
     "static/css/2.ad76a385.chunk.css.map": "/forum/static/css/2.ad76a385.chunk.css.map",
     "static/css/main.65c7c645.chunk.css.map": "/forum/static/css/main.65c7c645.chunk.css.map",
-    "static/js/2.c7237990.chunk.js.LICENSE.txt": "/forum/static/js/2.c7237990.chunk.js.LICENSE.txt"
+    "static/js/2.ac57aafa.chunk.js.LICENSE.txt": "/forum/static/js/2.ac57aafa.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.57d3de57.js",
     "static/css/2.ad76a385.chunk.css",
-    "static/js/2.c7237990.chunk.js",
+    "static/js/2.ac57aafa.chunk.js",
     "static/css/main.65c7c645.chunk.css",
-    "static/js/main.0d0d133e.chunk.js"
+    "static/js/main.3939fa8a.chunk.js"
   ]
 }
