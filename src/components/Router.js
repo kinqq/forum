@@ -6,8 +6,8 @@ import Profile from "routes/Profile";
 import Navigation from "components/Navigation";
 import Detail from "routes/Detail";
 import Post from "./Post";
-import Time from "./Time";
 import Home from "./Home";
+import LoadTimetable from "../routes/LoadTimetable";
 
 const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
     return (
@@ -67,7 +67,7 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
                                 <Post userObj={userObj} />
                             </Route>
                             <Route exact path="/time">
-                                <Time />
+                                <LoadTimetable />
                             </Route>
                         </div>
                     ) : (
@@ -77,6 +77,12 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
                                     userObj={userObj}
                                     refreshUser={refreshUser}
                                 />
+                            </Route>
+                            <Route exact path="/detail/:postId">
+                                <Detail userObj={userObj} />
+                            </Route>
+                            <Route exact path="/time">
+                                <LoadTimetable />
                             </Route>
                         </>
                     )}

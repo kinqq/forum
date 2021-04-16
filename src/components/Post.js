@@ -62,13 +62,20 @@ const Post = ({ userObj }) => {
         }
         event.preventDefault();
 
-        const day = new Date().toLocaleString();
+        const date = new Date();
+        const hour =
+            date.getHours() < 12
+                ? "오전 " + date.getHours()
+                : "오후 " + (date.getHours() - 12);
+        const createdAt = `${date.getFullYear()}년 ${
+            date.getMonth() + 1
+        }월 ${date.getDate()}일 ${hour}시 ${date.getMinutes()}분 ${date.getSeconds()}초`;
         console.log(name);
         const nweetObj = {
             title: title,
             desc: result,
             category: category,
-            createdAt: day,
+            createdAt: createdAt,
             creatorId: userObj.uid,
             creatorName: name,
         };

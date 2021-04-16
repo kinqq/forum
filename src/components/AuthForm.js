@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { authService, dbService } from "fbase";
+import { Link } from "react-router-dom";
 
 const AuthForm = (userObj, refreshUser) => {
     function SHA256(s) {
@@ -328,6 +329,9 @@ const AuthForm = (userObj, refreshUser) => {
                 <span onClick={toggleAccount} className="authSwitch">
                     {newAccount ? "로그인" : "회원가입"}
                 </span>
+                <Link to="/time" className="authInput timeSubmit">
+                    시간표
+                </Link>
             </form>
         </>
     );

@@ -423,6 +423,15 @@ font-size: 20px;
     cursor: pointer;
 }
 
+.timeSubmit {
+    text-align: center;
+    background: #ffaf38;
+    color: white;
+    margin-top: 14px;
+    box-sizing: content-box;
+    cursor: pointer;
+}
+
 .authError {
     color: tomato;
     text-align: center;
@@ -565,15 +574,44 @@ tr {
 .profile__timeTable {
     margin: 0px auto 20px auto;
     text-align: center;
+    border: 1px solid #444444;
+    border-collapse: collapse;
+}
+
+.profile__timeTable th, .profile__timeTable td{
+    border: 1px solid #444444;
 }
 
 .profile__timeTable__content{
     color:black;
-    font-size: 1.8em;
-    margin: 10px auto;
+    font-size: 30px;
+    padding: 5px 10px;
 }
 
 .profile__timeTable__Title{
-    font-size: 1.8em;
-    margin: 0px auto;
+    font-size: 40px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.profile__timeTable__tr th {
+    font-size: 30px;
+    padding: 5px 50px;
+}
+
+.profile__timeTable__tr  {
+    font-size: 30px;
+}
+
+.profile__timeTable__subject {
+    font-size: 30px;
+    padding: 5px 50px;
+}
+
+.timetable__background{
+    margin-top: 50px;
+}
+
+.profile__tltle{
+    text-align: center;
 }
